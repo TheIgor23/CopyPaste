@@ -11,6 +11,7 @@
     <modules>
         <module>hash-generator</module>
         <module>rest-service</module>
+        <module>common</module>
     </modules>
 
     <properties>

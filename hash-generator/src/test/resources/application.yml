@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/hash_database_test
+    username: test_hash_user
+    password: test_hash_password
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update

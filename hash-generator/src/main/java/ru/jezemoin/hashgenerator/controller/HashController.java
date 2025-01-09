@@ -1,10 +1,10 @@
 package ru.jezemoin.hashgenerator.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.jezemoin.hashgenerator.dto.HashResponse;
+import ru.jezemoin.common.dto.HashResponseDTO;
 import ru.jezemoin.hashgenerator.service.HashGeneratorService;
 
 @RestController
@@ -19,9 +19,10 @@ public class HashController {
     }
 
     @GetMapping(GENERATE_HASH)
-    public HashResponse generateHash() {
+    public ResponseEntity<HashResponseDTO>  generateHash() {
         String hash = generatorService.getUniqueHash();
-        return HashResponse.makeDefault(hash);
+        return ResponseEntity.status(HttpStatus.CREATED).body(HashResponseDTO.builder().build());
+
     }
 
 }

@@ -1,0 +1,14 @@
+server:
+  port: 8085
+
+hash-generator:
+  url: http://127.0.0.1:8080
+
+minio:
+  endpoint: http://127.0.0.1:9000
+  port: 9000
+  accessKey:  minio-root-user
+  secretKey:  minio-root-password
+  secure: false
+  bucket-name: data
+  file-size: 1073741824

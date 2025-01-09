@@ -5,6 +5,7 @@ package ru.jezemoin.hashgenerator.store.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.GenericGenerator;
 
 @Getter
 @Setter
@@ -13,13 +14,14 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-@Table(name = "hash")
+@Table(name = "hashes")
 public class HashEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     Integer id;
 
-    @Column(unique = true)
-    String hash;
+    @Column(unique = true, name = "hash_data")
+    String hashData;
 
 }

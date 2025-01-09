@@ -1,0 +1,1 @@
+docker exec -it 227d8ca758dc sh -c "psql -U hashUser -d hash_database"
